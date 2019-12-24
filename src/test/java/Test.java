@@ -35,7 +35,7 @@ public class Test {
         capabilities.setCapability("app", app.getAbsolutePath());
 
         driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-        //PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
     @org.junit.Test
