@@ -19,8 +19,7 @@ public class HomePageTest {
 
     @Before
     public void setUp ()
-            throws MalformedURLException, InvocationTargetException, NoSuchMethodException, InstantiationException,
-            IllegalAccessException {
+            throws MalformedURLException {
 
         capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName","Android");
@@ -49,5 +48,10 @@ public class HomePageTest {
     @Test
     public void clickWaitingButtonTest() {
         homePage.getWaitingButtonTest().click();
+    }
+
+    @Test
+    public void clickShowToastButton() {
+        homePage.getShowToastButton().click();
     }
 }

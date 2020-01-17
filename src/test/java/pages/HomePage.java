@@ -20,6 +20,9 @@ public class HomePage extends BasePage {
     @AndroidFindBy(id = "io.selendroid.testapp:id/visibleButtonTest")
     WebElement visibleButtonTest;
 
+    @AndroidFindBy(id = "io.selendroid.testapp:id/showToastButton")
+    WebElement showToastButton;
+
     public WebElement getMyTextField() {
         return myTextField;
     }
@@ -30,5 +33,9 @@ public class HomePage extends BasePage {
 
     public WebElement getVisibleButtonTest() {
         return visibleButtonTest;
+    }
+
+    public WebElement getShowToastButton() {
+        return showToastButton;
     }
 }
