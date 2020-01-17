@@ -1,24 +1,26 @@
+package tests;
+
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import org.junit.Before;
-import org.openqa.selenium.WebElement;
+import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.HomePage;
 
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Test {
+public class HomePageTest {
     private DesiredCapabilities capabilities;
     private AppiumDriver driver;
 
     HomePage homePage;
 
     @Before
-    public void setUp () throws MalformedURLException {
+    public void setUp ()
+            throws MalformedURLException, InvocationTargetException, NoSuchMethodException, InstantiationException,
+            IllegalAccessException {
 
         capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName","Android");
@@ -34,17 +36,17 @@ public class Test {
         homePage = new HomePage(driver);
     }
 
-    @org.junit.Test
+    @Test
     public void sendKeysMyTextField() {
         homePage.getMyTextField().sendKeys("Hello World");
     }
 
-    @org.junit.Test
+    @Test
     public void clickVisibleButtonTest() {
         homePage.getVisibleButtonTest().click();
     }
 
-    @org.junit.Test
+    @Test
     public void clickWaitingButtonTest() {
         homePage.getWaitingButtonTest().click();
     }
